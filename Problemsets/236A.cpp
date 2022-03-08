@@ -4,12 +4,19 @@ using namespace std;
 int main() {
     string nome;
     cin >> nome;
-    string nomebase;
-    for (int i = 0; i < nome.length(); i++) {
-        if(nomebase.find(nome[i])) {
-            nomebase.push_back(nome[i]);
+    int count = 0;
+    sort(nome.begin(), nome.end());
+    for (int i = 0; i < nome.size(); i++) {
+        if (nome[i] != nome [i-1]) {
+            count++;
         }
     }
-    cout << nomebase << endl;
+
+    if (count % 2 != 0) {
+        cout << "IGNORE HIM!" << endl;
+    }
+    else {
+        cout << "CHAT WITH HER!" << endl;
+    }
     return 0;
-}
+}   
